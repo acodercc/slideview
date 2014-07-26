@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, max-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>横向slider</title>
+<style>
+html{
+    font-size: 100px
+}
+html,body{
+    margin:0;
+    padding:0;
+}
+.slider{
+    background-clip: border-box;
+    background-origin: border-box;
+    box-sizing: border-box;
+    border: 1px dashed #f00;
+    width: 3.2rem;
+    height: 1.4rem;
+    margin:1.6rem auto;
+    font-size: .1rem;
+}
+.slider-wrap li{
+    list-style: none
+}
+.card{
+    box-sizing: border-box;
+    padding: .04rem;
+    border-radius: .04rem;
+}
+.slider-wrap li{
+    float: left;
+    width: 90px;
+    height: 90px;
+    background: #e4e4e4;
+}
+.slider-wrap li:first-child{
+    margin-left: 0px;
+}
+#slider-dynamic,#slider-static{
+   --overflow: visible !important;
+}
+#slider-dynamic .slider-wrap{
+}
+#slider-static{
+    top: 1rem;
+}
+#demo{
+    position: absolute;
+    top: 1rem;
+}
+#demo input{
+    font-size: .14rem;
+}
+</style>
+<script src="../src/slideview.js"></script>
+
+</head>
+<body>
+
+<!-- 动态创建元素的slider的slider -->
+<div id="slider-dynamic" class="slider">
+</div>
+
+
+<!-- 静态html已存在的slider的slider -->
+<div id="slider-static" class="slider">
+    <div class="slider-outer">
+        <ul class="slider-wrap">
+                <li><a href="http://m.taobao.com"><img class="lazyimg" dataimg="img/s1.jpg" src="http://a.tbcdn.cn/mw/webapp/fav/img/grey.gif" width="90" height="90" alt="1" /></a>1</li>
+                <li><a href="http://m.taobao.com"><img class="lazyimg" dataimg="img/s2.jpg" src="http://a.tbcdn.cn/mw/webapp/fav/img/grey.gif" width="90" height="90" alt="2" /></a>2</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div id="demo">
+    <input type="button" id="J-btnSlideTo" class="J-clickEvent" value="slideTo view" />
+    <br />
+    <input type="button" id="J-btnPrev" class="J-clickEvent" value="prev view" />
+    <br />
+    <input type="button" id="J-btnNext" class="J-clickEvent" value="next view" />
+</div>
+
+
+<script src="slider-x-page.js"></script>
+<script>
+    Page.init();
+</script>
+</body>
+</html>
